@@ -1,0 +1,58 @@
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const srcDirectory = path.resolve(__dirname, '../src');
+const buildDirectory = path.resolve(__dirname, '../build');
+
+module.exports = {
+  entry: {
+    main: [path.join(srcDirectory, 'index.js')]
+  },
+  output: {
+    path: buildDirectory,
+    publicPath: ''
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'babel-loader',
+          options: { presets: ['babel-preset-env', 'babel-preset-react'] }
+        }]
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpg|jpeg|svg|gif|woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: 'file-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [{
+          loader: 'style-loader',
+        }, {
+          loader: 'css-loader',
+        }]
+      }
+    ]
+  },
+  plugins: [
+    new CleanWebpackPlugin(['build'], {
+      root: process.cwd()
+    }),
+    new CopyWebpackPlugin([{
+      from: path.join(srcDirectory, 'assets/images'),
+      to: 'images'
+    }]),
+    new HtmlWebpackPlugin({
+      template: path.join(srcDirectory, 'public/index.html')
+    })
+  ]
+};

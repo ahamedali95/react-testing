@@ -1,0 +1,30 @@
+.submit-btn {
+  margin-left: 20px;
+  height: 40px;
+  background-color: #1da1f2 !important;
+  width: 100px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.tweets {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.timestamp {
+  float: right;
+  color: gray;
+  font-size: 10px
+}
+
+.input {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #1da1f2;
+}
