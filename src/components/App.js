@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Tweets from './Tweets';
-import Input from './Input';
+import CreateTweet from './CreateTweet';
 import Logo from './Logo';
 
-class Twitter extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -23,10 +23,10 @@ class Twitter extends Component {
       <div className="container">
         <Logo />
         <Tweets tweets={this.state.tweets} />
-        <Input sendTweet={(tweet) => this.postTweet(tweet)} />
+        <CreateTweet sendTweet={tweet => this.postTweet(tweet)} />
       </div>
     );
   }
 }
 
-export default Twitter;
+export default App;

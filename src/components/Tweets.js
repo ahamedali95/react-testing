@@ -7,7 +7,10 @@ const Tweets = props => {
       {
         props.tweets.map((tweet, i) => {
           return (
-            <div key={i} className="card-body">
+            <div
+              key={i}
+              className="card-body"
+            >
               <p className="card-text">{tweet}</p>
               <span className="timestamp">
                 {moment().format("h:mm a . MM/DD/YYYY")}

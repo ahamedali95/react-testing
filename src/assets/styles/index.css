@@ -28,3 +28,10 @@
   border-style: solid;
   border-color: #1da1f2;
 }
+
+.logo:hover {
+  background-color: red;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 49px;
+}
