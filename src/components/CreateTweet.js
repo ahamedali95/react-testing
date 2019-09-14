@@ -25,7 +25,10 @@ class CreateTweet extends Component {
 
   render() {
     return (
-      <div className="row justify-content-center">
+      <div
+        className="row justify-content-center"
+        data-test="create-tweet-component"
+      >
         <label className="col col-2">
           Enter Tweet:
         </label>
