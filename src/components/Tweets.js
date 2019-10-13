@@ -1,19 +1,21 @@
 import React from 'react';
-import moment from 'moment';
 
 const Tweets = props => {
   return (
-    <div className="tweets justify-content-center card">
+    <div
+        className="tweets justify-content-center card"
+        data-test="tweets-component"
+    >
       {
-        props.tweets.map((tweet, i) => {
+        props.tweets.map(tweet => {
           return (
             <div
-              key={i}
+              key={tweet.id}
               className="card-body"
             >
-              <p className="card-text">{tweet}</p>
+              <p className="card-text">{tweet.tweet}</p>
               <span className="timestamp">
-                {moment().format("h:mm a . MM/DD/YYYY")}
+                {tweet.timestamp}
               </span>
             </div>
           )
