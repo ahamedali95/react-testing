@@ -4,7 +4,9 @@
   "description": "React Testing",
   "main": "index.js",
   "jest": {
-    "setupFiles": ["<rootDir>/enzyme.config.js"]
+    "setupFiles": [
+      "<rootDir>/enzyme.config.js"
+    ]
   },
   "scripts": {
     "start": "webpack-dev-server --progress --config config/webpack.dev.js",
@@ -37,6 +39,7 @@
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.9.0",
     "style-loader": "^0.23.1",
+    "uuid": "^3.3.3",
     "webpack": "^4.33.0",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.3",
