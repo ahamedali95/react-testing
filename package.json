@@ -6,6 +6,9 @@
   "jest": {
     "setupFiles": [
       "<rootDir>/enzyme.config.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/testUtils/testHelpers.js"
     ]
   },
   "scripts": {
@@ -13,7 +16,8 @@
     "build:dev": "webpack --progress --config config/webpack.dev.js",
     "build:prod": "webpack --progress --config config/webpack.prod.js",
     "watch": "jest --watch",
-    "jest-clear-cache": "jest --clearCache"
+    "jest-clear-cache": "jest --clearCache",
+    "coverage": "jest --coverage"
   },
   "dependencies": {
     "@babel/core": "^7.6.0",

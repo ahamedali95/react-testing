@@ -1,6 +1,6 @@
 import App from "../../src/components/App";
 import { findByAttr, setUpWithMount } from '../testUtils/testHelpers.js';
-import tweets from '../testData/tweets';
+import tweets from '../../src/data/tweets';
 
 describe('App-test.js', () => {
   const wrapper = setUpWithMount(App);
@@ -35,8 +35,6 @@ describe('App-test.js', () => {
           timestamp: '12:10 am 12/11/2019'
         };
         const mockPostTweet = jest.spyOn(instance, 'postTweet');
-        // Difference between jest.spynOn vs jest.fn()
-          // - jest.spyOn() uses the actual implementation of the original method but jest.fn() does not;
         instance.postTweet = mockPostTweet;
         instance.postTweet(tweetObject);
 

@@ -1,6 +1,6 @@
 import Tweets from "../../src/components/Tweets";
 import { findByAttr, setUpWithMount } from '../testUtils/testHelpers.js';
-import tweets from '../testData/tweets';
+import tweets from '../../src/data/tweets';
 
 describe('Tweets-test.js', () => {
   const wrapper = setUpWithMount(Tweets, { tweets });
