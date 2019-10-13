@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       tweets: []
     };
+    this.postTweet = this.postTweet.bind(this);
   }
 
   postTweet(tweet) {
@@ -20,7 +21,10 @@ class App extends Component {
 
   render() {
     return(
-      <div className="container">
+      <div
+        className="container"
+        data-test="app-component"
+      >
         <Logo />
         <Tweets tweets={this.state.tweets} />
         <CreateTweet sendTweet={tweet => this.postTweet(tweet)} />

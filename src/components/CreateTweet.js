@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import moment from 'moment';
+import uuid from "uuid";
 
 class CreateTweet extends Component {
   constructor(props) {
@@ -19,8 +21,9 @@ class CreateTweet extends Component {
 
   sendTweet() {
     const tweet = this.state.tweet;
+    const tweetObject = { id: uuid.v4(), tweet, timestamp: moment().format("h:mm a MM/DD/YYYY") };
 
-    this.setState({ tweet: '' }, () => this.props.sendTweet(tweet));
+    this.setState({ tweet: '' }, () => this.props.sendTweet(tweetObject));
   }
 
   render() {
@@ -34,12 +37,14 @@ class CreateTweet extends Component {
         </label>
         <textarea
           className="col col-5 input"
+          data-test="create-tweet-component-textarea"
           value={this.state.tweet}
           onChange={(e) => this.handleInputChange(e)}
         />
         <button
-          type="button"
           className="btn btn-primary submit-btn"
+          data-test="create-tweet-component-button"
+          type="button"
           onClick={() => this.sendTweet()}
         >
           Tweet
