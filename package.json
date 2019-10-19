@@ -15,7 +15,7 @@
     "start": "webpack-dev-server --progress --config config/webpack.dev.js",
     "build:dev": "webpack --progress --config config/webpack.dev.js",
     "build:prod": "webpack --progress --config config/webpack.prod.js",
-    "watch": "jest --watch",
+    "watch": "jest --watch --verbose",
     "jest-clear-cache": "jest --clearCache",
     "coverage": "jest --coverage"
   },
